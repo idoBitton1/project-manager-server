@@ -6,3 +6,4 @@
 /out
 
 .env
+/src/generated/prisma
