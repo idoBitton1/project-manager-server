@@ -1,11 +1,15 @@
 import 'dotenv/config';
-import express from 'express';
+import express, { json } from 'express';
+import cookieParser from 'cookie-parser';
 
 import apiRouter from './routes';
+import requestLoggerMiddleware from './middlewares/loggerMiddleware';
 
 const app = express();
 
-app.use(express.json());
+app.use(json());
+app.use(cookieParser());
+app.use(requestLoggerMiddleware);
 
 app.use('/api', apiRouter);
 
