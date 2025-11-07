@@ -1,2 +1,3 @@
+export const REFRESH_TOKEN_EXPIRY_DAYS = 7;
+export const REFRESH_TOKEN_EXPIRY_DAYS_TXT = `${REFRESH_TOKEN_EXPIRY_DAYS}d`;
 export const ACCESS_TOKEN_EXPIRY = '15m';
-export const REFRESH_TOKEN_EXPIRY = '7d';
