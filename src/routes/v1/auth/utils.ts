@@ -37,7 +37,7 @@ const createTokens = async (userId: string) => {
 const storeRefreshToken = (res: Response, refreshToken: string) => {
     res.cookie('refreshToken', refreshToken, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
+        secure: process.env.ENVIRONMENT === 'production',
         sameSite: 'strict',
         path: '/api/v1/auth',
         maxAge: REFRESH_TOKEN_EXPIRY_DAYS * 24 * 60 * 60 * 1000

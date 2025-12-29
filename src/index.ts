@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import cors from 'cors';
 import express, { json } from 'express';
 import cookieParser from 'cookie-parser';
 
@@ -7,6 +8,10 @@ import requestLoggerMiddleware from './middlewares/loggerMiddleware';
 
 const app = express();
 
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+}));
 app.use(json());
 app.use(cookieParser());
 app.use(requestLoggerMiddleware);
